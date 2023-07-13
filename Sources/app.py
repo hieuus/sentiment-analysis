@@ -24,9 +24,11 @@ button_style = '''
         }
     </style>'''
 
+
 st.set_page_config(page_title="Sentiment Analysis", page_icon= "😊")
 
-st.image('images/sentiment.png', width=300)
+
+st.image('Sources/images/sentiment.png', width=300)
 
 st.title("Sentiment Analysis")
 st.markdown(button_style, unsafe_allow_html=True)
@@ -59,15 +61,15 @@ def to_sentiment(Sentiment):
 
 def emoji_path(status):
     if status == "Negative":
-        return "images/negative.png"
+        return "Sources/images/negative.png"
     if status == "Positive":
-        return "images/positive.png"
+        return "Sources/images/positive.png"
     else:
-        return "images/neutral.png"
+        return "Sources/images/neutral.png"
 
 # Ô kết quả trả về đúng/sai
 if st.button("Predict"):
-    model_ckpt='../Model_saved'
+    model_ckpt='Model_saved'
     pipe=pipeline('sentiment-analysis',model=model_ckpt)
 
     result = to_sentiment(pipe(context_processing)[0]['label'])
