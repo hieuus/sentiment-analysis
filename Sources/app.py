@@ -25,7 +25,7 @@ button_style = '''
     </style>'''
 
 
-st.set_page_config(page_title="Sentiment Analysis", page_icon= "😊")
+st.set_page_config(page_title="Sentiment Analysis")
 
 
 st.image('Sources/images/sentiment.png', width=300)
